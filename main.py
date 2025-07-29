@@ -49,6 +49,7 @@ class WeatherLayout(BoxLayout):
             return None , None
 
     def WeatherApi(self , instance):
+        self.welcome.text = "Welcome to the simple weather app"
         city = self.City.text
         lat , lon = self.coordinates(city)
         if lat is None or lon is None : 
@@ -92,6 +93,7 @@ class WeatherLayout(BoxLayout):
         self.Temp.text = f"Current Temperature is : {temp}"
         self.Type.text = f"Outside it is : {outsideweather}"
         self.Humidity.text = f"Current Humidity is : {humidity}"
+        self.welcome.text = f"{city}"
 
 
         if temp > 30: 
