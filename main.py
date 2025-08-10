@@ -34,7 +34,7 @@ class WeatherLayout(BoxLayout):
 
     def coordinates(self, city):
         url = f'https://nominatim.openstreetmap.org/search?city={city}&format=json&limit=1'
-        headers = {'User-Agent' : 'SimpleWeatherApp (test@gmail.com)' }
+        headers = {'User-Agent' : 'SimpleWeatherApp ' }
         response = requests.get(url , headers = headers)
 
         if response.status_code != 200 : 
@@ -128,4 +128,5 @@ class WeatherApp(App):
 
 if __name__ == "__main__":
     WeatherApp().run()
+
 
